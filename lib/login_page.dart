@@ -9,8 +9,10 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const appTitle = 'Votação';
+    
+    const appTitle = 'Login';
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: appTitle,
         home: Scaffold(
           appBar: AppBar( 

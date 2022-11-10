@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
    Widget build(BuildContext context) {
     const appTitle = 'Votação';
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: appTitle,
         home: Scaffold(
           appBar: AppBar( 

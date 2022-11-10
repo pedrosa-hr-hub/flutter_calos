@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calos/dataList_page.dart';
 import 'package:flutter_calos/home_page.dart';
 import 'package:flutter_calos/login_page.dart';
 
@@ -10,10 +11,11 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/login',
+      initialRoute: '/data',
       routes: {
         '/home': (context) => const HomePage(),
         '/login': (context) => const LoginPage(),
+        '/data': (context) => DataPageList()
       },
       
     );
