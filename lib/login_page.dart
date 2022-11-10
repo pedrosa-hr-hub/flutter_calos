@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calos/dataList_page.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-
-import 'home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({ Key? key }) : super(key: key);
@@ -93,7 +92,7 @@ class LoginPage extends StatelessWidget {
 
     if(response.statusCode == 200){
       Navigator.pushReplacement(context,
-        MaterialPageRoute(builder:(context) =>const HomePage()));
+        MaterialPageRoute(builder:(context) => DataPageList()));
     }
 
     }

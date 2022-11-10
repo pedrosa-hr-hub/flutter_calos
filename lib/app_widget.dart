@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calos/dataCount_page.dart';
 import 'package:flutter_calos/dataList_page.dart';
 import 'package:flutter_calos/home_page.dart';
 import 'package:flutter_calos/login_page.dart';
@@ -11,11 +12,12 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/data',
+      initialRoute: '/home',
       routes: {
         '/home': (context) => const HomePage(),
         '/login': (context) => const LoginPage(),
-        '/data': (context) => DataPageList()
+        '/data': (context) => DataPageList(),
+        '/count': (context) => DataPageCount()
       },
       
     );

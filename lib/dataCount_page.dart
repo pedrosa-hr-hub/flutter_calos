@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:flutter_calos/model/votoList_model.dart';
+import 'package:flutter_calos/model/votoCount_model.dart';
 
-class DataPageList extends StatelessWidget {
+class DataPageCount extends StatelessWidget {
 
   Future<List<Voto>> votofuturo = getVoto();
 
-  DataPageList({super.key});
+  DataPageCount({super.key});
 
   static Future<List<Voto>> getVoto() async{
-    const url = 'http://localhost:8000/consulta';
+    const url = 'http://localhost:8000/sintect';
     final response = await http.get(Uri.parse(url));
 
     final body = json.decode(response.body);
@@ -26,6 +26,11 @@ class DataPageList extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar( 
             title: const Text(appTitle),
+            backgroundColor: Colors.green,
+            actions: [
+              IconButton(onPressed: (){}, 
+              icon: Icon(Icons.menu))
+            ],
           ),
           body: Center(
             child: FutureBuilder<List<Voto>>(
@@ -53,7 +58,7 @@ class DataPageList extends StatelessWidget {
         return Card(
           child: ListTile(
             title: Text(voto.voto),
-            subtitle: Text(voto.email),
+            subtitle: Text('${voto.qtd}'),
             ),
           );
         },
