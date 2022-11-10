@@ -27,10 +27,6 @@ class DataPageCount extends StatelessWidget {
           appBar: AppBar( 
             title: const Text(appTitle),
             backgroundColor: Colors.green,
-            actions: [
-              IconButton(onPressed: (){}, 
-              icon: Icon(Icons.menu))
-            ],
           ),
           body: Center(
             child: FutureBuilder<List<Voto>>(

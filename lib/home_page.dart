@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar( 
             title: const Text(appTitle),
+            backgroundColor: Colors.green,
           ),
           body: const MyForm(),
         ),
@@ -50,8 +51,12 @@ class MyFormState extends State<MyForm> {
             TextFormField(
               controller: _votoController,
               decoration: const InputDecoration(
-                labelText: "Voto"
+                    focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green), //<-- SEE HERE
+                  ),
+                    floatingLabelStyle: TextStyle(color: Colors.green),
                 ),
+                cursorColor:  Colors.green,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Digite algum valor';
@@ -62,8 +67,13 @@ class MyFormState extends State<MyForm> {
             TextFormField(
               controller: _emailController,
               decoration: const InputDecoration(
-                labelText: "Email"
+                labelText: "Email",
+                    focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green), //<-- SEE HERE
+                  ),
+                    floatingLabelStyle: TextStyle(color: Colors.green),
                 ),
+                cursorColor:  Colors.green,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Digite algum valor';
@@ -74,8 +84,12 @@ class MyFormState extends State<MyForm> {
             TextFormField(
               controller: _nomeController,
               decoration: const InputDecoration(
-                labelText: "Nome"
+                    focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green), //<-- SEE HERE
+                  ),
+                    floatingLabelStyle: TextStyle(color: Colors.green),
                 ),
+                cursorColor:  Colors.green,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Digite algum valor';
@@ -86,8 +100,12 @@ class MyFormState extends State<MyForm> {
             TextFormField(
               controller: _cidadeController,
               decoration: const InputDecoration(
-                labelText: "Cidade"
+                    focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green), //<-- SEE HERE
+                  ),
+                    floatingLabelStyle: TextStyle(color: Colors.green),
                 ),
+                cursorColor:  Colors.green,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Digite algum valor';
@@ -98,8 +116,12 @@ class MyFormState extends State<MyForm> {
             TextFormField(
               controller: _estadoController,
               decoration: const InputDecoration(
-                labelText: "Estado"
+                    focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green), //<-- SEE HERE
+                  ),
+                    floatingLabelStyle: TextStyle(color: Colors.green),
                 ),
+                cursorColor:  Colors.green,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Digite algum valor';
@@ -110,6 +132,9 @@ class MyFormState extends State<MyForm> {
             Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor:Colors.green,
+              ),
               onPressed: () {
                 _sendData(context);
               },

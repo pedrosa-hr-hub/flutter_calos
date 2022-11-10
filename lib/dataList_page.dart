@@ -26,8 +26,10 @@ class DataPageList extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar( 
             title: const Text(appTitle),
+            backgroundColor: Colors.green,
           ),
-          body: Center(
+          body: 
+          Center(
             child: FutureBuilder<List<Voto>>(
               future: votofuturo,
               builder: (context, snapshot) {

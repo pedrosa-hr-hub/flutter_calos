@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calos/dataCount_page.dart';
 import 'package:flutter_calos/dataList_page.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -16,6 +17,7 @@ class LoginPage extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar( 
             title: const Text(appTitle),
+            backgroundColor: Colors.green,
           ),
           body: const MyFormLogin(),
         ),
@@ -42,14 +44,21 @@ class LoginPage extends StatelessWidget {
      Widget build(BuildContext context) {
       return Form(
         key: _formLoginKey,
-        child: Column(
+        child: 
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
               controller: _userController,
               decoration: const InputDecoration(
-                labelText: "Usuário"
+                labelText: "Usuário",
+                    focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green), //<-- SEE HERE
+                  ),
+                    floatingLabelStyle: TextStyle(color: Colors.green),
                 ),
+                cursorColor:  Colors.green,
+                
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Digite algum valor';
@@ -61,8 +70,13 @@ class LoginPage extends StatelessWidget {
               obscureText: true,
               controller: _passController,
               decoration: const InputDecoration(
-                labelText: "Senha"
+                labelText: "Senha",
+                    focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green), //<-- SEE HERE
+                  ),
+                    floatingLabelStyle: TextStyle(color: Colors.green),
                 ),
+                cursorColor:  Colors.green,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Digite algum valor';
@@ -73,6 +87,9 @@ class LoginPage extends StatelessWidget {
             Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor:Colors.green,
+              ),
               onPressed: () {
                 _sendData(context);
               },
@@ -92,7 +109,7 @@ class LoginPage extends StatelessWidget {
 
     if(response.statusCode == 200){
       Navigator.pushReplacement(context,
-        MaterialPageRoute(builder:(context) => DataPageList()));
+        MaterialPageRoute(builder:(context) => DataPageCount()));
     }
 
     }
