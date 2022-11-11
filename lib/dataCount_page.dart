@@ -14,16 +14,16 @@ class DataPageCount extends StatelessWidget {
     final response = await http.get(Uri.parse(url));
 
     final body = json.decode(response.body);
-    List<Voto> teste = body.map<Voto>(Voto.fromJson).toList();
-    double soma=0;
-    teste.forEach((element) {
+    List<Voto> voto = body.map<Voto>(Voto.fromJson).toList();
+    double soma = 0;
+    voto.forEach((element) {
       soma=soma+element.qtd;
     });
-    teste.forEach((element) {
+    voto.forEach((element) {
       
       element.porcentagem= element.qtd/soma*100;
     });
-    return teste;// body.map<Voto>(Voto.fromJson).toList();
+    return voto;
   }
 
   @override
