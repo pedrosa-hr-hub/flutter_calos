@@ -14,7 +14,16 @@ class DataPageCount extends StatelessWidget {
     final response = await http.get(Uri.parse(url));
 
     final body = json.decode(response.body);
-    return body.map<Voto>(Voto.fromJson).toList();
+    List<Voto> teste = body.map<Voto>(Voto.fromJson).toList();
+    double soma=0;
+    teste.forEach((element) {
+      soma=soma+element.qtd;
+    });
+    teste.forEach((element) {
+      
+      element.porcentagem= element.qtd/soma*100;
+    });
+    return teste;// body.map<Voto>(Voto.fromJson).toList();
   }
 
   @override
@@ -54,7 +63,7 @@ class DataPageCount extends StatelessWidget {
         return Card(
           child: ListTile(
             title: Text(voto.voto),
-            subtitle: Text('${voto.qtd}'),
+            subtitle: Text('${voto.porcentagem.toStringAsPrecision(2)} %'),
             ),
           );
         },

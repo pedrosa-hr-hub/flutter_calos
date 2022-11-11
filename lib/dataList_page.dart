@@ -10,7 +10,7 @@ class DataPageList extends StatelessWidget {
   DataPageList({super.key});
 
   static Future<List<Voto>> getVoto() async{
-    const url = 'http://localhost:8000/consulta';
+    const url = 'http://10.0.2.2:8000/consulta';
     final response = await http.get(Uri.parse(url));
 
     final body = json.decode(response.body);

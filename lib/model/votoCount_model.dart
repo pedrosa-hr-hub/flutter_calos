@@ -1,8 +1,9 @@
 class Voto {
   final String voto;
   final int qtd;
+  double porcentagem=0;
 
-  const Voto({
+  Voto({
     required this.voto,
     required this.qtd,
 

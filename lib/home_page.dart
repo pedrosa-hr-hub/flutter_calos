@@ -51,6 +51,7 @@ class MyFormState extends State<MyForm> {
             TextFormField(
               controller: _votoController,
               decoration: const InputDecoration(
+                labelText: "Voto",
                     focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.green), //<-- SEE HERE
                   ),
@@ -84,6 +85,7 @@ class MyFormState extends State<MyForm> {
             TextFormField(
               controller: _nomeController,
               decoration: const InputDecoration(
+                labelText: "Nome",
                     focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.green), //<-- SEE HERE
                   ),
@@ -100,6 +102,7 @@ class MyFormState extends State<MyForm> {
             TextFormField(
               controller: _cidadeController,
               decoration: const InputDecoration(
+                labelText: "Cidade",
                     focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.green), //<-- SEE HERE
                   ),
@@ -116,6 +119,7 @@ class MyFormState extends State<MyForm> {
             TextFormField(
               controller: _estadoController,
               decoration: const InputDecoration(
+                labelText: "Estado",
                     focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.green), //<-- SEE HERE
                   ),
@@ -164,7 +168,7 @@ class MyFormState extends State<MyForm> {
 
     Future<http.Response> createVoto(String voto, String email, String nome, String cidade, String estado) {
     return http.post(
-        Uri.parse('http://localhost:8000/voto'),
+        Uri.parse('http://10.0.2.2:8000/voto'),
         headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',
         },

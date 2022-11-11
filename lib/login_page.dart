@@ -116,7 +116,7 @@ class LoginPage extends StatelessWidget {
 
     Future<http.Response> createVoto(String user, String pass) {
     return http.post(
-        Uri.parse('http://localhost:8000/user'),
+        Uri.parse('http://10.0.2.2:8000/user'),
         headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',
         },
