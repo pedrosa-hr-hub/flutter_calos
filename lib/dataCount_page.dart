@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
+import 'package:flutter_calos/home_page.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_calos/model/votoCount_model.dart';
 
@@ -35,6 +36,13 @@ class DataPageCount extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar( 
             title: const Text(appTitle),
+            leading: IconButton(
+            onPressed: () {
+                Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder:(context) => HomePage()));
+            },
+            icon: const Icon(Icons.arrow_back),
+          ),
             backgroundColor: Colors.green,
           ),
           body: Center(

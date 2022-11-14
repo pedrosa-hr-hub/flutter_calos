@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calos/home_page.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_calos/model/votoList_model.dart';
@@ -19,14 +20,21 @@ class DataPageList extends StatelessWidget {
 
   @override
    Widget build(BuildContext context) {
-    const appTitle = 'Dados Listados';
+    const appTitle = 'Dados Sinteticos';
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: appTitle,
         home: Scaffold(
           appBar: AppBar( 
             title: const Text(appTitle),
-            backgroundColor: Colors.green,
+            leading: IconButton(
+            onPressed: () {
+                Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder:(context) => HomePage()));
+            },
+            icon: const Icon(Icons.arrow_back),
+          ),
+          backgroundColor: Colors.green,
           ),
           body: 
           Center(

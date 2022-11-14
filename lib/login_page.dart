@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_calos/dataCount_page.dart';
-import 'package:flutter_calos/dataList_page.dart';
+import 'package:flutter_calos/home_page.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -109,7 +108,7 @@ class LoginPage extends StatelessWidget {
 
     if(response.statusCode == 200){
       Navigator.pushReplacement(context,
-        MaterialPageRoute(builder:(context) => DataPageCount()));
+        MaterialPageRoute(builder:(context) => HomePage()));
     }
 
     }
