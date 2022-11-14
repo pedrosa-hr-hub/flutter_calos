@@ -3,8 +3,8 @@ import 'package:flutter_calos/login_page.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class HomePage extends StatelessWidget {
-  const HomePage({ Key? key }) : super(key: key);
+class FormPage extends StatelessWidget {
+  const FormPage({ Key? key }) : super(key: key);
 
   @override
    Widget build(BuildContext context) {
