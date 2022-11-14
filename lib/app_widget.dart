@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_calos/dataCount_page.dart';
 import 'package:flutter_calos/dataList_page.dart';
 import 'package:flutter_calos/form_page.dart';
+import 'package:flutter_calos/home_page.dart';
+import 'package:flutter_calos/login_page.dart';
 import 'package:flutter_calos/login_page.dart';
 
 class AppWidget extends StatelessWidget {
@@ -14,10 +16,11 @@ class AppWidget extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/home',
       routes: {
-        '/home': (context) => const FormPage(),
+        '/form': (context) => const FormPage(),
         '/login': (context) => const LoginPage(),
         '/data': (context) => DataPageList(),
-        '/count': (context) => DataPageCount()
+        '/count': (context) => DataPageCount(),
+        '/home':(context) => const HomePage() 
       },
       
     );
