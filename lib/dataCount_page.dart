@@ -71,7 +71,7 @@ class DataPageCount extends StatelessWidget {
         return Card(
           child: ListTile(
             title: Text(voto.voto),
-            subtitle: Text('${voto.porcentagem.toStringAsPrecision(2)} %'),
+            subtitle: Text('${voto.porcentagem.toStringAsPrecision(4).replaceAll('.', ',')} %'),
             ),
           );
         },

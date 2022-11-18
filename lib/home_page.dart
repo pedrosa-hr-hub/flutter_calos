@@ -37,44 +37,48 @@ class HomePage extends StatelessWidget {
 
   @override
      Widget build(BuildContext context) {
-      return Form(
-        key: _formLoginKey,
-        child: 
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor:Colors.green,
-              ),
-              onPressed: () {
+      return Builder(
+        builder: (context) {
+          return Center(
+            key: _formLoginKey,
+            child: 
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:Colors.green,
+                  ),
+                  onPressed: () {
 
-                Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder:(context) => DataPageList()));
-                
-              },
-              child: const Text('Dados Listados'),
-            ),
-            ),
-            Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor:Colors.green,
-              ),
-              onPressed: () {
+                    Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder:(context) => DataPageList()));
+                    
+                  },
+                  child: const Text('Dados Listados'),
+                ),
+                ),
+                Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:Colors.green,
+                  ),
+                  onPressed: () {
 
-                Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder:(context) => DataPageCount()));
-                
-              },
-              child: const Text('Dados Sinteticos'),
+                    Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder:(context) => DataPageCount()));
+                    
+                  },
+                  child: const Text('Dados Sinteticos'),
+                ),
+                ),
+              ],
             ),
-            ),
-          ],
-        ),
+          );
+        }
       );
      }
 
